@@ -5,6 +5,7 @@ module.exports = {
     "prettier",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
+    "plugin:testing-library/react",
   ],
   settings: {
     react: {
