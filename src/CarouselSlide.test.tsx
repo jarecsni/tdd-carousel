@@ -24,4 +24,20 @@ describe('CarouselSlide', () => {
       `${props.description} ${props.attribution}`
     );
   });
+  it('passes imgUrl through to the <img>', () => {
+    const imgUrl = 'https://example.com/image.png';
+    render(<CarouselSlide imgUrl={imgUrl} />);
+    const img = screen.getByRole('img');
+    expect(img).toHaveAttribute('src', imgUrl);
+  });
+  it('passes other props through to the <figure>', () => {
+    const props = {
+      className: 'my-carousel-slide',
+      'data-testid': 'my-slide',
+    };
+    render(<CarouselSlide {...props} />);
+    const figure = screen.getByRole('figure');
+    expect(figure).toHaveClass(props.className);
+    expect(figure).toHaveAttribute('data-testid', props['data-testid']);
+  });
 });

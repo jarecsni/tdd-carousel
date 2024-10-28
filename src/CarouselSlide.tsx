@@ -1,3 +1,5 @@
+import { ComponentPropsWithRef } from 'react';
+
 type CarouselProps = {
   imgUrl?: string;
   description?: string;
@@ -7,8 +9,9 @@ export const CarouselSlide = ({
   imgUrl,
   description,
   attribution,
-}: CarouselProps) => (
-  <figure>
+  ...rest
+}: CarouselProps & ComponentPropsWithRef<'figure'>) => (
+  <figure {...rest}>
     <img src={imgUrl} />
     <figcaption data-testid="caption">
       <strong>{description}</strong>
