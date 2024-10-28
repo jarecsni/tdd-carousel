@@ -4,12 +4,10 @@ interface CarouselButtonProps extends React.ButtonHTMLAttributes<HTMLButtonEleme
   children?: React.ReactNode;
 }
 
-const CarouselButton: React.FC<CarouselButtonProps> = ({ children, ...props }) => {
+export const CarouselButton: React.FC<CarouselButtonProps> = ({ children, ...props }) => {
   return (
     <button {...props}>
       {children}
     </button>
   );
 };
-
-export default CarouselButton;

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import CarouselButton from './CarouselButton';
+import { CarouselButton } from './CarouselButton';
 
 describe('CarouselButton', () => {
   it('renders a button element', () => {
